@@ -43,7 +43,7 @@ console.log('Arr with Par Number = ', arrPar);
 // - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) .
 // за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
 
-let arrStr = arr.map((value) => `${value + ''}`);
+let arrStr = arr.map((value) => `${value.toString()}`);
 console.log('All Number is String now: ', arrStr);
 
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
@@ -81,5 +81,10 @@ let sortByMonthDuration = coursesAndDurationArray.sort(function (p1, p2) {
 console.log('SortedByMonthDuration = ', sortByMonthDuration);
 
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-const sortedMoreFiveMonth = coursesAndDurationArray.filter(element => element.monthDuration > 5);
+let sortedMoreFiveMonth = coursesAndDurationArray.filter(element => element.monthDuration > 5);
 console.log('Kурси з тривалістю більше 5 місяців: ', sortedMoreFiveMonth);
+
+let sortedMoreFiveMonth2 = coursesAndDurationArray.filter(function (coursesAndDurationArray) {
+    return coursesAndDurationArray.monthDuration > 5;
+});
+console.log('Kурси з тривалістю більше 5 місяців: ', sortedMoreFiveMonth2);
